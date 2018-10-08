@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  web:
+    build: .
+    restart: always
+    command: python manage.py runserver_plus --threaded 0.0.0.0:9001
+    volumes:
+      - .:/code
+    ports:
+      - "9001:9001"
+      - "8888:8888"
